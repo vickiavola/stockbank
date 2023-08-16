@@ -1,14 +1,19 @@
-import logo from "./assets/img/stock_bank.svg"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Login } from './assets/components/Login'
+
 import './App.css'
 
 function App() {
 
   return (
-    <>
-      <img src={logo} />
-
-    </>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Login />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
 
-export default App
+export default App;
