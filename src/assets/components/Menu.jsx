@@ -1,6 +1,5 @@
 //import React from 'react';
 import { useState } from 'react';
-import { Login } from "./Login";
 import { CambiarPin } from "./Cambiarpin";
 import { Comprar } from "./Comprar";
 import { Depositar } from "./Depositar";
@@ -9,6 +8,7 @@ import { Revisar} from "./Revisar";
 import { Vender } from "./Vender";
 import { NavLink } from "react-router-dom";
 
+
 export const Menu = () => {
   const [cambiarPin, setCambiarpin] = useState("");
   const [revisar, setRevisar] = useState("");
@@ -16,6 +16,7 @@ export const Menu = () => {
   const [vender, setVender] = useState("");
   const [depositar, setDepositar] = useState("");
   const [estado, setEstado] = useState("");
+
 
 
   function cerrarSesion(){

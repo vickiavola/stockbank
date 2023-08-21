@@ -1,6 +1,7 @@
 //import React from 'react';
 import { Solicitudpin } from './Solicitudpin';
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import logo from "../img/stock_bank.svg";
 
 export const Login = () => {
@@ -11,16 +12,23 @@ export const Login = () => {
      const [apellido, setApellido] = useState("");
      const [usuario, setUsuario] = useState("");
 
+
      function preinicioSesion(e){
           e.preventDefault();
           var unombre = document.getElementById("unombre").value;
           var uapellido = document.getElementById("uapellido").value;
           var uusuario = document.getElementById("uusuario").value;
+
+
+
+          
           if (unombre.length ===0 || uapellido.length ===0 || uusuario.length ===0){
                alert("Por favor ingrese su nombre, apellido y usuario");
           }else{
                if(unombre !=0 && uapellido !=0 && uusuario !=0){
                     setPrelogin("true");
+
+
 
                     document.getElementById("form_login").style.display = "none";
                }else{
@@ -32,6 +40,8 @@ export const Login = () => {
                     document.getElementById("unombre").focus();
                }
           }
+
+
 
      }
      
@@ -56,6 +66,7 @@ return (
           </div>
           <br/>
           <input type="submit" className="btn btn-primary" value="Login" onClick= {preinicioSesion}/>
+
 
           </form>
 

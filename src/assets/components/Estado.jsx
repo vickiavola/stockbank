@@ -1,30 +1,69 @@
+import { useState, useEffect } from 'react';
+
 export const Estado = () => {
+ 
+  
+  const [registrocompra] = useState(obtenerInversion());
+
+  
+
+  
+  
+  useEffect(() => {
+    localStorage.setItem("registrocompra", JSON.stringify(registrocompra))
+  }, [registrocompra]);
+
+
+
+
 
      return (
-          <div className="bg-light" style={{marginTop:20, padding:20}}>
+          <div className="">
 
-          <div className="h3">
-            Listado De Registro De Pinturas
+          <div className="">
+            Estado de cuenta
           </div>
   
-          <div className="table-responsive">
+          <div className="">
             
   
    
             <>
-              <table className="table table-bordered table-hover" style={{marginTop:12}}>
-                  <thead className="text-center" style={{background:"lightgray"}}>
+              <table id="compras" className="">
+                  <thead className="">
                       <tr>
                           <th>#</th>
-                          <th>Depositado</th>
                           <th>Comprado</th>
-                          <th>Vendido</th>
-                          <th>Precio</th>
-                          <th>X</th>
                       </tr>
                   </thead>
-                  <tbody className="text-center align-baseline">
-                      
+                  <tbody className="">
+                      {
+                        registrocompra.map((compra, index) => (
+                          <tr key={index}>
+                            <th>{ index+1 }</th>
+                            <th>{ compra.inversion }</th>
+                          </tr>
+                        ))
+                      }
+                  </tbody>
+              </table>
+
+              <table id="ventas" className="">
+                  <thead className="">
+                      <tr>
+                          <th>item</th>
+                          <th>Vendido</th>
+                      </tr>
+                  </thead>
+                  <tbody className="">
+                      {
+                        obtenerVenta.map((venta, index) => (
+                          <tr key={index}>
+                            <th>{ index+1 }</th>
+                            <th>{ venta.inversion }</th>
+                          </tr>
+                        ))
+                      }
                   </tbody>
               </table>
             </> 

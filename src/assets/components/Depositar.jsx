@@ -2,7 +2,7 @@ export const Depositar = () => {
 
      return (
           <div>
- depositar
+ depositar, aqui se va a depositar fondos economicos
           </div>
 
 )
