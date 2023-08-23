@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Menu } from './Menu';
 import { Login } from "./Login";
-//import { Menu } from "./Menu";
 import logo from "../img/stock_bank.svg";
 
 
@@ -21,8 +20,9 @@ export const Solicitudpin = (props) => {
                alert("Por favor ingrese su PIN para continuar");
           }else{
                if(upin !=0){
-                    //setLogin("true");
+
                     const Users = JSON.parse(localStorage.getItem('users')) || []
+
                     const estaRegistrado = Users.find(user => user.userName === userN)
 
                     if(estaRegistrado){

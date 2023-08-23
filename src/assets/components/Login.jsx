@@ -1,7 +1,7 @@
 //import React from 'react';
 import { Solicitudpin } from './Solicitudpin';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import logo from "../img/stock_bank.svg";
 
 export const Login = () => {
