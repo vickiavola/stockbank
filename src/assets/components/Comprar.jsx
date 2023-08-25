@@ -43,7 +43,7 @@ export const Comprar = () => {
                   <select onChange={(e) => setInversion(e.target.value)} required  >
                     <option value="">Inversiones Disponibles</option>
                     <option value="10 Acciones de Coca-Cola">10 Acciones de Coca-Cola</option>
-                    <option value="10 Accioens de Pepsi-Cola">10 Accioens de Pepsi-Cola</option>
+                    <option value="10 Accioens de Pepsi-Cola">10 Acciones de Pepsi-Cola</option>
                     <option value="10 Acciones de Microsoft">10 Acciones de Microsoft</option>
                     <option value="10 Acciones de Apple">10 Acciones de Apple</option>
                     <option value="10 Acciones de Facebook">10 Acciones de Facebook</option>

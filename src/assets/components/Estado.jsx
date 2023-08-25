@@ -2,11 +2,16 @@ import { useState, useEffect } from 'react';
 
 export const Estado = () => {
  
-  
-  const [registrocompra] = useState(obtenerInversion());
+  const obtenerInversion = () => {
+    var datos = localStorage.getItem("registrocompra");
+    if(datos) {
+      return JSON.parse(datos);
+ }else {
+      return [];
+    }
+  }
 
-  
-
+  const [registrocompra, setRegistrocompra] = useState(obtenerInversion());
   
   
   useEffect(() => {

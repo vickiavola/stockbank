@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+
+
 export const Vender = () => {
     
        const obtenerInversion = () => {
@@ -10,35 +12,46 @@ export const Vender = () => {
        }else {
            return [];
          }
-
-
-
-
        }
        
-       const [registrocompra, setergistrocompra] = useState(obtenerInversion());
+       const [registrocompra, setregistrocompra] = useState(obtenerInversion());
+       const [registroventa, setregistroventa] = useState(obtenerInversion());
+
+       
+
 
        const botonVender = (miIndex) => {
           if(window.confirm('¿Está seguro de que quiere vender ésta acción?')){
             var registrosFiltrados = registrocompra.filter((e, index) => {
-              return miIndex !== index
+
+            return miIndex !== index
             });
-            setergistrocompra(registrosFiltrados);
-            
-            
-            
-            
+            const ventas = [];
+            console.log([registrocompra[0]]);
+            ventas.push([registrocompra[0]]);
+            const ventaAceptada = [...ventas];
+
+            console.log([ventaAceptada]);
 
 
+            setregistrocompra(registrosFiltrados);
+            
+
+            setregistroventa(ventaAceptada);
+            
+        
         }
       }
-
-
-
        useEffect(() => {
          localStorage.setItem("registrocompra", JSON.stringify(registrocompra))
        }, [registrocompra]);
      
+       useEffect(() => {
+        localStorage.setItem("registroventa", JSON.stringify(registroventa))
+      }, [registroventa]);
+
+
+
           return (
                <div className="">
      
@@ -68,19 +81,21 @@ export const Vender = () => {
                                    <button className="" onClick={()=>botonVender(index)}>
                                         <i className="">Vender</i>
                                    </button>
+
                                    </td>
                                </tr>
                              ))
                            }
                        </tbody>
-                   </table>
-     
+
+                </table>
+
                  </> 
                  
-                 
+  
        
                </div>
-            
+
              </div>
      
      )

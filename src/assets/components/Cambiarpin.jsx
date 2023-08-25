@@ -6,54 +6,101 @@ import { Solicitudpin } from "./Solicitudpin";
 //import { Menu } from "./Menu";
 import logo from "../img/stock_bank.svg";
 
-
-export const CambiarPin = () => {
-
      // Leo el array de usuarios
 
 
 
-     let users = localStorage.getItem('users');
-     let usersList = JSON.parse(users);
 
 
-     // establesco variables
+export function CambiarPin (e) {
+     e.preventDefault();
+     var usuariocambiopin = document.getElementById("usuariocambiopin").value;
+     var pinviejo = document.getElementById("pinviejo").value;
+     var pinnuevo = document.getElementById("pinnuevo").value;
+
+     const obtenerUsuarios = () => {
+          let users = localStorage.getItem('users');
+          if(datos) {
+               return JSON.parse(users);
+          }else{
+               return [];
+          }
+          }
+
+     
+     const [usuarios, setUsuarios] = useState(obtenerUsuarios());
+
+     const findUser = usersList.find((user) => user.userName === usuariocambiopin)
 
 
+          
+
+     function handlePin (usersList ) {
+          const findUser = usersList.map(() => user.userName === usuariocambiopin)
+          if (pinviejo === findUser.pin && usuariocambiopin === findUser.userName){
+               return findUser.pin === pinnuevo
+          }else {
+          alert("Por favor ingrese el usurio y el Pin viejo correctamente");
+          document.getElementById("usuariocambiopin").value="";
+          document.getElementById("pinviejo").value="";
+          document.getElementById("pinnuevo").value="";
+          document.getElementById("usuariocambiopin").focus();
+
+     }
+
+
+
+     setPinn(handlePin);
+
+
+
+
+
+
+
+
+/*     // establesco variables
      function cambiarPin (e) {
           e.preventDefault();
           var usuariocambiopin = document.getElementById("usuariocambiopin").value;
           var pinviejo = document.getElementById("pinviejo").value;
-          var pinnuevo = document.getElementById("pinnuevo").value;
-
-          
+      
 
 
 
           console.log (usuariocambiopin);
           console.log (pinviejo);
-          console.log (pinnuevo);
+
           console.log(usersList);
 
           // encontrando el usuario que es igual al logeado
           const findUser = usersList.find((user) => user.userName === usuariocambiopin)
           console.log(findUser.pin)
+          var pinUserviejo = findUser.pin;
+       
+          var pinnuevo = document.getElementById("pinnuevo").value;
 
-          if (pinviejo === findUser.pin) {
+          
 
-
-
-               console.log ("yes")
+          if (pinviejo === findUser.pin && usuariocambiopin === findUser.userName) {
+               console.log (findUser.pin);
+               findUser.pin === pinnuevo.value              
+               console.log (findUser.pin);
+               console.log (pinnuevo);
           }else{
-               alert("Por favor ingrese el Pin viejo correctamente");
+               alert("Por favor ingrese el usurio y el Pin viejo correctamente");
                document.getElementById("usuariocambiopin").value="";
                document.getElementById("pinviejo").value="";
                document.getElementById("pinnuevo").value="";
                document.getElementById("usuariocambiopin").focus();
 
-          }
+          }}
 
-     }
+     */
+
+
+
+
 
      return (
           <div className ="container">
@@ -70,10 +117,10 @@ export const CambiarPin = () => {
  
           </div>
           <br/>
-          <input type="submit" className="btn btn-primary" value="Cambiar pin" onClick= {cambiarPin}  />
+          <input type="submit" className="btn btn-primary" value="Cambiar pin" onClick= {CambiarPin}  />
 
           </form>
 
      </div>
      )
-}
+}}
