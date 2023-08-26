@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { CambiarPin } from "./Cambiarpin";
 import { Comprar } from "./Comprar";
 import { Depositar } from "./Depositar";
-import { Estado } from "./Estado";
 import { Revisar} from "./Revisar";
 import { Vender } from "./Vender";
 import { NavLink } from "react-router-dom";
@@ -15,7 +14,7 @@ export const Menu = () => {
   const [comprar, setComprar] = useState("");
   const [vender, setVender] = useState("");
   const [depositar, setDepositar] = useState("");
-  const [estado, setEstado] = useState("");
+
 
 
 
@@ -31,7 +30,7 @@ export const Menu = () => {
     setComprar("0");
     setVender("0");
     setDepositar("0");
-    setEstado("0");
+
   }
 
    function op_revisar(){
@@ -40,7 +39,7 @@ export const Menu = () => {
     setComprar("0");
     setVender("0");
     setDepositar("0");
-    setEstado("0");
+
   }
 
   function op_comprar(){
@@ -49,7 +48,7 @@ export const Menu = () => {
     setComprar("1");
     setVender("0");
     setDepositar("0");
-    setEstado("0");
+
   }
 
 
@@ -59,7 +58,7 @@ export const Menu = () => {
     setComprar("0");
     setVender("1");
     setDepositar("0");
-    setEstado("0");
+ 
   }
 
   function op_depositar(){
@@ -68,17 +67,9 @@ export const Menu = () => {
     setComprar("0");
     setVender("o");
     setDepositar("1");
-    setEstado("0");
+
   }
 
-  function op_estado(){
-    setCambiarpin("0");
-    setRevisar("0");
-    setComprar("0");
-    setVender("o");
-    setDepositar("0");
-    setEstado("1");
-  }
 
 
   
@@ -101,11 +92,10 @@ return (
          <div className="" id="navbarNavAltMarkup">
            <div className="navbar-nav">
              <NavLink to="" className="nav-link" onClick={ op_cambiarPin } >Cambiar PIN</NavLink>
-             <NavLink to="" className="nav-link" onClick={ op_revisar} >Revisar acciones</NavLink>
+             <NavLink to="" className="nav-link" onClick={ op_revisar} >Ver Estado de Cuenta</NavLink>
              <NavLink to="" className="nav-link" onClick={ op_comprar } >Comprar acciones</NavLink>
              <NavLink to="" className="nav-link" onClick={ op_vender} >Vender acciones</NavLink>
              <NavLink to="" className="nav-link" onClick={ op_depositar } >Depositar fondos</NavLink>
-             <NavLink to="" className="nav-link" onClick={ op_estado } >Generar estado de cuenta</NavLink>
              <a className="nav-link-finalizar"   href=" "  onClick={ cerrarSesion } >Finalizar Sesión</a>
            </div>
          </div>
@@ -118,7 +108,7 @@ return (
     { comprar=== "1" && <Comprar/>}
     { vender === "1" && <Vender/> }
     { depositar === "1" && <Depositar/> }
-    { estado === "1" && <Estado/> }
+
 
  </>
    

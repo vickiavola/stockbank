@@ -1,8 +1,50 @@
 import { useState, useEffect } from 'react';
 
 export const Revisar = () => {
+ 
+     const obtenerInversion = () => {
+       var datos = localStorage.getItem("registrocompra");
+       if(datos) {
+         return JSON.parse(datos);
+    }else {
+         return [];
+       }
+     }
 
-     <p>Revisar</p>
+     const obtenerVentas = () => {
+          var datos = localStorage.getItem("registroventa");
+          if(datos) {
+            return JSON.parse(datos);
+       }else {
+            return [];
+          }
+        }
+
+
+
+     const [registrocompra, setRegistrocompra] = useState(obtenerInversion());
+     const [registroventa, setRegistroventa] = useState(obtenerVentas());
+
+     function estado(opcion){
+          console.log({registrocompra});
+
+
+
+          if(opcion === 1){
+               console.log({registroventa});
+
+          }else if(opcion ===2){
+
+          }else{
+
+          }
+
+     }
+
+
+
+
+
 
      return (
      <>
