@@ -34,15 +34,15 @@ export const Depositar = () => {
 
      return (
       <div>
-      <div className="h3">
-           Compra de Saldo
+      <div className="titulo-pagina">
+           Compra de Saldo (Moneda en dólares)
            <br/>
            <form id="miSaldo" onSubmit={ botonComprarsaldo }>
 
            
-           <div>
-           <div>
-                <input 
+
+           <div >
+                <input className="imput-saldo"
                 type="number" 
                 min="1" 
                 max="100000000" 
@@ -50,11 +50,11 @@ export const Depositar = () => {
                 onChange={(e) => setSaldo(e.target.value)}
                 required />
            </div>
-           </div>
+
 
            <div>
            <div>
-                <button>Depositar Saldo</button>
+                <button className="btn-primary">Depositar Saldo</button>
            </div>
            </div>
            </form>

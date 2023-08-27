@@ -52,20 +52,28 @@ return (
           <form id="form_login">
           <div>
                <img className= "logo-login" src={ logo } alt="logo"/>
+               <p className="titulo-login">Te damos la bienvenida a Stock Bank, tu lugar de inversión</p>
                <p className="titulo-login">LOGIN</p>
-               <label htmlFor="nombre">Nombre: </label>
+               <div className="datos-login">
+               <label htmlFor="nombre" className="tipo_dato" >Nombre: </label>
                <input type="text" id="unombre"className="form-control" onChange={ (e)=> setNombre(e.target.value) } required/>
+               </div>
           </div>
           <div>
-               <label htmlFor="apellido">Apellido: </label>
+          <div className="datos-login">
+               <label htmlFor="apellido" className="tipo_dato">Apellido: </label>
                <input type="text" id="uapellido" className="form-control"  onChange={ (e)=> setApellido(e.target.value) }required/>
+               </div>
           </div>
           <div>
-               <label htmlFor="usuario">Usuario: </label>
+               <div className="datos-login">
+               <label htmlFor="usuario"className="tipo_dato">Usuario: </label>
                <input type="text" id="uusuario" className="form-control"  onChange={ (e)=> setUsuario(e.target.value) }required/>
+               </div>
           </div>
+
           <br/>
-          <input type="submit" className="btn btn-primary" value="Login" onClick= {preinicioSesion}/>
+          <input type="submit" className="btn-primary" value="Login" onClick= {preinicioSesion}/>
 
 
           </form>

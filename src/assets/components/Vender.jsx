@@ -55,30 +55,23 @@ export const Vender = () => {
           return (
                <div className="">
      
-               <div className="">
+               <div className="titulo-pagina">
                  Ventas de acciones
                </div>
        
-               <div className="">
-                 
-       
-        
+
                  <>
-                   <table id="compras" className="">
-                       <thead className="">
-                           <tr>
-                               <th>Item</th>
-                               <th>Acciones disponibles</th>
-                           </tr>
-                       </thead>
-                       <tbody className="">
+                   <table id="compras" className="tabla-venta">
+
+                       <tbody className="tabla-venta1">
                            {
                              registrocompra.map((compra, index) => (
-                               <tr key={index}>
-                                 <th>{ index+1 }</th>
-                                 <th>{ compra.inversion }</th>
+                               <tr className="" key={index}>
+
+                                 <th className="">{ compra.inversion }</th>
                                  <td className="">
-                                   <button className="" onClick={()=>botonVender(index)}>
+
+                                   <button className="btn-primary" onClick={()=>botonVender(index)}>
                                         <i className="">Vender</i>
                                    </button>
 
@@ -87,7 +80,6 @@ export const Vender = () => {
                              ))
                            }
                        </tbody>
-
                 </table>
 
                  </> 
@@ -96,7 +88,7 @@ export const Vender = () => {
        
                </div>
 
-             </div>
+
      
      )
      }

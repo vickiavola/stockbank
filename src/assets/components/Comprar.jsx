@@ -35,12 +35,12 @@ export const Comprar = () => {
      return (
           <div>
 
-          <div className="h3">
-            Seleccione la invesión que desea realizar y presiona el botón Guardar Datos.
+          <div className="titulo-pagina">
+            Seleccione la invesión que desea realizar.
             <br/>
             <form id="listadoInversiones"  onSubmit={ botonComprar }>
-                <div className="menu_acciones">
-                  <select onChange={(e) => setInversion(e.target.value)} required  >
+                <div>
+                  <select className="menu_acciones" onChange={(e) => setInversion(e.target.value)} required  >
                     <option value="">Inversiones Disponibles</option>
                     <option value="10 Acciones de Coca-Cola">10 Acciones de Coca-Cola</option>
                     <option value="10 Accioens de Pepsi-Cola">10 Acciones de Pepsi-Cola</option>
@@ -50,9 +50,9 @@ export const Comprar = () => {
                     <option value="10 Acciones de Twitter">10 Acciones de Twitter</option>
                   </select>
                 </div>
-
-                  <button className="boton-comprar">Comprar</button>
-
+                  <div className="separacion-boton">
+                  <button className="btn-primary">Comprar</button>
+                  </div>
             </form>
           </div>
                   

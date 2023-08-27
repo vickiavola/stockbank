@@ -1,101 +1,93 @@
 import { useState, useEffect } from 'react';
 
+
 export const Revisar = () => {
- 
-     const obtenerInversion = () => {
-       var datos = localStorage.getItem("registrocompra");
-       if(datos) {
+  const obtenerCompra = () => {
+    var datos = localStorage.getItem("registrocompra");
+    if(datos) {
          return JSON.parse(datos);
     }else {
          return [];
-       }
-     }
+    }
+    }
 
-     const obtenerVentas = () => {
-          var datos = localStorage.getItem("registroventa");
-          if(datos) {
-            return JSON.parse(datos);
-       }else {
-            return [];
-          }
+      const obtenerSaldo = () => {
+        var datos2 = localStorage.getItem("registrosaldo");
+        if(datos2) {
+             return JSON.parse(datos2);
+        }else {
+             return [];
+        }
         }
 
+        const [registrocompra]  = useState(obtenerCompra());
+        const [registrosaldo]  = useState(obtenerSaldo());
 
-
-     const [registrocompra, setRegistrocompra] = useState(obtenerInversion());
-     const [registroventa, setRegistroventa] = useState(obtenerVentas());
-
-     function estado(opcion){
-          console.log({registrocompra});
-
-
-
-          if(opcion === 1){
-               console.log({registroventa});
-
-          }else if(opcion ===2){
-
-          }else{
-
+        var i= 0;
+        var resultado = 0;
+        var  miSaldo;
+        function saldo (opcion) {
+          if (opcion === 1){
+          for (i=0; i<registrosaldo.length; i++){
+            miSaldo = registrosaldo[i];
+            resultado += parseInt(miSaldo.saldo);
           }
 
-     }
+        }
+        return resultado;
+        }
 
+  return(
+ <>
+        
+        <>
+                   <table id="compras" className="titulo-pagina">
+                       <thead className="item">
+                           <tr>
 
+                               <th className="titulo-acciones">Acciones disponibles</th>
 
-
-
-
-     return (
-     <>
-
-<div className="bg-light" style={{marginTop:20, padding:20}}>
-
-    <div className="h3">
-      Estado de cuenta
-    </div>
-
-    <div className="table-responsive">
-      
-
-
-        <div >
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Compras realizadas</h5>
-                <p className="card-text"> TEXTO A REEMPLAZAR </p>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-              <h5 className="card-title">Ventas realizadas</h5>
-                <p className="card-text"> TEXTO A REEMPLAZAR </p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="col">
-            <div className="card">
-              <div className="card-body">
-                <h5 className="card-title">Saldo</h5>
-                <p className="card-text"> TEXTO A REEMPLAZAR </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-      
-    </div>
+                           </tr>
+                       </thead>
+                       <tbody className="list-acciones">
+                           {
+                             registrocompra.map((compra, index) => (
+                               <tr key={index}>
+                                 
+                                 <th>{ compra.inversion }</th>
+                                 <td className="">
  
-  </div>
+
+                                   </td>
+                               </tr>
+                             ))
+                           }
+                       </tbody>
+
+                </table>
+
+
+                <table id="compras" >
+                       <thead className="">
+                           <tr>
+
+                               <th className="titulo-acciones">Saldo Disponible</th>
+                           </tr>
+                       </thead>
+                       <tbody className="list-acciones">
+                           
+                            {saldo(1)} dólares
+                           
+                       </tbody>
+
+                </table>
 
 
 
-     </> 
+                 </> 
+ 
+ 
+ </>
 
-)
+  )
 }

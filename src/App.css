@@ -3,27 +3,169 @@
   margin: 0 auto;
   padding: 0rem;
   text-align: center;
+  font-family: Roboto;
 }
 
-
+.logo-login{
+  height: 20rem;
+}
+.logo-menu{
+  height: 13rem;
+  padding-bottom: 2rem;
+}
 .container{
   display: flex;
   flex-direction: column;
   align-content: center;
-}
-
-.logo-login {
-  width: 25rem;
-
-}
-
-.titulo-login {
-  font-weight: bold;
   
 }
 
-.navbar-nav{
+.datos-login{
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items:baseline;
   gap: 20px;
+}
+
+.btn-primary{
+  height: 2rem;
+  width: 10rem;
+  background-color:#0038A8;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-style: none;
+  border-radius: 1rem;
+}
+
+.btn-primary:hover { 
+  background:#F33C4A; 
+  color: white; 
+}
+
+.tipo_dato{
+  width:3rem;
+  height: 2rem;
+  padding-bottom: 0.7rem;
+}
+
+.form-control{
+  width: 15rem;
+  height: 1.6rem;
+
+}
+
+
+.titulo-login{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+
+.navbar-nav{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 20px;
+
+}
+
+.encabezado-menu{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1rem;
+}
+
+.titulo-pagina{
+  padding-top: 2rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+
+.titulo-pagina2{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+  background-color:#FBA247;
+
+}
+.menu_acciones{
+  width:20rem;
+  height: 2rem;
+  font-weight: 400;
+  font-size: 1rem;
+
+}
+
+.separacion-boton{
+  padding-top: 2rem;
+}
+
+.tabla-principal{
+  padding-top: 2rem;
+  display: flex;
+  justify-content:center;
+  flex-direction: column;
+  width: 50rem;
+
+}
+
+.tabla-venta{
+  display: flex;
+
+
+  justify-items: center;
+
+  width: 100%;
+  padding-top: 2rem;
+
+}
+
+.tabla-venta1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 2rem;
+  gap: 3rem;
+  width: 30rem;
+}
+
+.tabla{
+  display: flex; 
+  flex-direction: row; 
+  justify-content:left;
+
+}
+
+.item-tabla{
+  display: flex;  
+  justify-content:center;
+  flex-direction: row;
+
+  
+}
+
+.item-index{
+  text-align: center;
+}
+
+.titulo-acciones{
+  background-color:#62CF49 ;
+  font-size: 1.5rem;
+
+}
+
+.list-acciones{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.imput-saldo{
+  height: 2rem;
+  width: 10rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

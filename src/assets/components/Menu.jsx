@@ -6,6 +6,7 @@ import { Depositar } from "./Depositar";
 import { Revisar} from "./Revisar";
 import { Vender } from "./Vender";
 import { NavLink } from "react-router-dom";
+import logo from "../img/stock_bank.svg";
 
 
 export const Menu = () => {
@@ -86,9 +87,10 @@ return (
                
      <nav className="">
        <div className="">
-
-         <label className="titulo-1" href=" ">Menú Principal</label>
-         
+        <div className="encabezado-menu">
+       <img className= "logo-menu" src={ logo } alt="logo"/>
+         <label className="titulo-login" href=" ">MENÚ PRINCIPAL</label>
+         </div>
          <div className="" id="navbarNavAltMarkup">
            <div className="navbar-nav">
              <NavLink to="" className="nav-link" onClick={ op_cambiarPin } >Cambiar PIN</NavLink>
