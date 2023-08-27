@@ -113,16 +113,6 @@
 
 }
 
-.tabla-venta{
-  display: flex;
-
-
-  justify-items: center;
-
-  width: 100%;
-  padding-top: 2rem;
-
-}
 
 .tabla-venta1{
   display: flex;
@@ -132,6 +122,19 @@
   gap: 3rem;
   width: 30rem;
 }
+
+
+.venta-inversion{
+  padding-left: 2rem;
+  padding-right: 3rem;
+  width: 30rem;
+}
+
+.venta-boton{
+  gap: 3rem;
+  width: 20rem;
+}
+
 
 .tabla{
   display: flex; 

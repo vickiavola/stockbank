@@ -61,15 +61,15 @@ export const Vender = () => {
        
 
                  <>
-                   <table id="compras" className="tabla-venta">
+                   <table id="compras" className="">
 
                        <tbody className="tabla-venta1">
                            {
                              registrocompra.map((compra, index) => (
                                <tr className="" key={index}>
 
-                                 <th className="">{ compra.inversion }</th>
-                                 <td className="">
+                                 <th className="venta-inversion">{ compra.inversion }</th>
+                                 <td className="venta-boton">
 
                                    <button className="btn-primary" onClick={()=>botonVender(index)}>
                                         <i className="">Vender</i>
